@@ -3,6 +3,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set mouse=nicr
+syntax on
 highlight Comment ctermfg=green
 set number
 filetype plugin on
