@@ -1,6 +1,7 @@
 set smartindent
-set tabstop=5
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set mouse=nicr
 highlight Comment ctermfg=green
 set number
@@ -57,3 +58,10 @@ map <C-o> :NERDTreeToggle<CR>
 
 " vim-airline
 set laststatus=2
+
+match ErrorMsg '\s\+$'
+
+set textwidth=80
+
+let g:indentLine_color_term = 239
+"let g:indentLine_color_tty_light = 1
