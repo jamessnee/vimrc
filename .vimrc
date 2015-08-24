@@ -59,10 +59,26 @@ map <C-o> :NERDTreeToggle<CR>
 
 " vim-airline
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
 
 match ErrorMsg '\s\+$'
 
 set textwidth=80
 
 let g:indentLine_color_term = 239
-"let g:indentLine_color_tty_light = 1
+
+function! JumpTexChapter(var1)
+  let chapTitle=a:var1
+  let searchStr="\chapter{".chapTitle."}"
+  let s_flags="cw"
+  call search(searchStr, s_flags)
+endfunction
+command! -nargs=1 JC call JumpTexChapter(<f-args>)
+
+function! JumpTexNextSection(var1)
+  let secTitle=a:var1
+  let searchStr="\section{".secTitle."}"
+  let s_flags="cW"
+  call search(searchStr, s_flags)
+endfunction
+command! -nargs=1 JS call JumpTexNextSection(<f-args>)
